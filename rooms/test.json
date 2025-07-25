@@ -1,0 +1,14 @@
+{
+    "name": "We are done!",
+    "country": "한국",
+    "city": "서울",
+    "price": 240,
+    "rooms": 2,
+    "toilet": 2,
+    "description": "Room with owner and amenities and categories!",
+    "address": "아제로스",
+    "pet_friendly": true,
+    "category": 3,
+    "amenities": [1,2,3,4],
+    "kind": "private_room"
+    }

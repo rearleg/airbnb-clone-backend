@@ -1,0 +1,25 @@
+[project]
+name = "airbnb-clone-backend"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "rearleg",email = "frameonmoment@gmail.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.10,<4"
+dependencies = [
+    "django (>=5.2.4,<6.0.0)",
+    "beautifulsoup4 (>=4.13.4,<5.0.0)",
+    "pillow (>=11.3.0,<12.0.0)",
+    "djangorestframework (>=3.16.0,<4.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+black = {version = "^25.1.0", allow-prereleases = true}
+
