@@ -1,3 +1,4 @@
+import time
 from django.conf import settings
 from django.utils import timezone
 from django.db import transaction
@@ -68,7 +69,10 @@ class Rooms(APIView):
             except Exception:
                 raise ParseError("Amenity not found")
         else:
-            return Response(serializer.errors)
+            return Response(
+                serializer.errors,
+                status=HTTP_400_BAD_REQUEST,
+            )
 
 
 class RoomDetail(APIView):
@@ -82,6 +86,7 @@ class RoomDetail(APIView):
             raise NotFound
 
     def get(self, request, pk):
+        time.sleep(1)
         room = self.get_objects(pk)
         serializer = RoomDetailSerializer(
             room,
@@ -175,7 +180,10 @@ class AmenityDetail(APIView):
             updated_amenity = serializer.save()
             return Response(AmenitySerializer(updated_amenity).data)
         else:
-            return Response(serializer.errors, status=HTTP_400_BAD_REQUEST,)
+            return Response(
+                serializer.errors,
+                status=HTTP_400_BAD_REQUEST,
+            )
 
     def delete(self, request, pk):
         amenity = self.get_object(pk)
