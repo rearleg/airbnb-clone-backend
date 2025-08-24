@@ -175,3 +175,18 @@ CORS_ALLOW_CREDENTIALS = True
 CSRF_TRUSTED_ORIGINS = ["http://127.0.0.1:3000"]
 
 GH_SECRET = env("GH_SECRET")
+
+
+
+# 카카오 env 설정
+KAKAO_CLIENT_ID = os.getenv("KAKAO_CLIENT_ID")
+KAKAO_REDIRECT_URI = os.getenv("KAKAO_REDIRECT_URI")
+
+# 우리 서비스용 JWT
+APP_JWT_SECRET = os.getenv("APP_JWT_SECRET", "CHANGE-ME")
+APP_JWT_ALG = "HS256"
+APP_JWT_EXP_MINUTES = 60 * 24 * 7  # 7일 예시
+
+
+CF_ID = env("CF_ID")
+CF_TOKEN = env("CF_TOKEN")

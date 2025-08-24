@@ -11,10 +11,9 @@ from .serializers import CategorySerializer
 class CategoryViewSet(ModelViewSet):
 
     serializer_class = CategorySerializer
-    queryset = Category.objects.all()
-
-
-
+    queryset = Category.objects.filter(
+        kind=Category.CategoryKindChoices.ROOMS,
+    )
 
 
 # 저장
@@ -28,7 +27,7 @@ class CategoryViewSet(ModelViewSet):
 #             many=True,
 #         )
 #         return Response(serializer.data)
-    
+
 #     def post(self, request):
 #         serializer = CategorySerializer(data=request.data)
 #         if serializer.is_valid():
@@ -71,9 +70,7 @@ class CategoryViewSet(ModelViewSet):
 #         return Response(status=HTTP_204_NO_CONTENT)
 
 
-
 # ----------------------
-
 
 
 # """
